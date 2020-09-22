@@ -1,15 +1,20 @@
-app: Google Chrome
-app: Firefox
-app: Microsoft Edge
-app: MicrosoftEdge.exe
-app: chrome.exe
-app: firefox.exe
-app: Safari
-
-#todo: use tags, remove apps
-#tags: browser
+tag: browser
 -
 (address bar | go address | go url): browser.focus_address()
+go home: browser.go_home()
+forward: browser.go_forward()
+go back[ward]: browser.go_back()
+
+go private: browser.open_private_window()
+
+bookmark show: browser.bookmarks()
+bookmark bar: browser.bookmarks_bar()
+bookmark it: browser.bookmark()
+bookmark tabs: browser.bookmark_tabs()
+
+(refresh | reload) it: browser.reload()
+(refresh | reload) it hard: browser.reload_hard()
+
 spring: key(ctrl-t)
 crack: key(ctrl-w)
 go first: key(ctrl-1)
@@ -21,20 +26,6 @@ go sixth: key(ctrl-6)
 go seventh: key(ctrl-7)
 go eighth: key(ctrl-8)
 go ninth: key(ctrl-9)
-
-go home: browser.go_home()
-go forward: browser.go_forward()
-go back[ward]: browser.go_back()
-
-go private: browser.open_private_window()
-
-bookmark show: browser.bookmarks()
-bookmark bar: browser.bookmarks_bar()
-bookmark it: browser.bookmark()
-bookmark tabs: browser.bookmark_tabs()
-
-reload: browser.reload()
-reload hard: browser.reload_hard()
 
 show downloads: browser.show_downloads()
 show extensions: browser.show_extensions()

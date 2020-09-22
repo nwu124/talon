@@ -6,70 +6,87 @@ deplush: " + "
 deminus: " - "
 duster: " * "
 divy: " / "
+model: " % "
 
 small comment: "// "
 open comment: "/* "
 close comment: "*/"
 
-question [mark]: "?"
-tilde: "~"
-(bang | exclamation point): "!"
-dollar sign: "$"
-(downscore | underscore): "_"
-colon: ":"
-(paren | left paren): "("
-(rparen | are paren | right paren): ")"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
-(angle | left angle | less than): "<"
-(rangle | are angle | right angle | greater than): ">"
-(star | asterisk): "*"
-(pound | hash [sign] | octo | thorpe | number sign): "#"
-percent [sign]: "%"
-caret: "^"
-at sign: "@"
-(and sign | ampersand ): "&"
-pipe: "|"
-(dubquote | double quote): '"'
-triple quote: "'''"
-(dot dot | dotdot): ".."
-ellipses: "…"
-comma and: ", "
-plus: "+"
-arrow: "->"
-dub arrow: "=>"
-op dub: " => "
-(op | pad) colon: " : "
-indirect: "&"
-dereference: "*"
-(op equals | assign): " = "
-op (minus | subtract | sub): " - "
-op (plus | add): " + "
-op (times | multiply): " * "
-op divide: " / "
-op mod: " % "
-[op] (minus | subtract | sub) equals: " -= "
-[op] (plus | add) equals: " += "
-[op] (times | multiply) equals: " *= "
-[op] divide equals: " /= "
-[op] mod equals: " %= "
+minus equals: " -= "
+plus equals: " += "
+times equals: " *= "
+divide equals: " /= "
+
 greater: " > "
 less: " < "
 longqual: " == "
 bangqual: " != "
 grayqual: " >= "
 lessqual: " <= "
-(op (power | exponent) | to the power [of]): " ** "
-(op | logical) and: " && "
-op or: " || "
-[op] (logical | bitwise) and: " & "
-[op] bitwise or: " | "
-[op] logical or: " || "
-(op | logical | bitwise) (ex | exclusive) or: " ^ "
-[(op | logical | bitwise)] (left shift | shift left): " << "
-[(op | logical | bitwise)] (right shift | shift right): " >> "
-(op | logical | bitwise) and equals: " &= "
-(op | logical | bitwise) or equals: " |= "
-(op | logical | bitwise) (ex | exclusive) or equals: " ^= "
-[(op | logical | bitwise)] (left shift | shift left) equals: " <<= "
-[(op | logical | bitwise)] (left right | shift right) equals: " >>= "
+
+logical and: " && "
+logical or: " || "
+logical left shift: " << "
+logical rate shift: " >> "
+
+question [mark]: "?"
+(downscore | underscore): "_"
+double dash: "--"
+(bracket | brack | left bracket): "{"
+(rbrack | are bracket | right bracket): "}"
+triple quote: "'''"
+(dot dot | dotdot): ".."
+#ellipses: "…"
+ellipses: "..."
+(comma and | spamma): ", "
+plus: "+"
+arrow: "->"
+dub arrow: "=>"
+new line: "\\n"
+carriage return: "\\r"
+line feed: "\\r\\n"
+empty dubstring:
+    '""'
+    key(left)
+empty escaped (dubstring|dub quotes):
+    '\\"\\"'
+    key(left)
+    key(left)
+empty string:
+    "''"
+    key(left)
+empty escaped string:
+    "\\'\\'"
+    key(left)
+    key(left)
+(inside parens | args):
+	insert("()")
+	key(left)
+inside (squares | list): 
+	insert("[]") 
+	key(left)
+inside (bracket | braces): 
+	insert("{}") 
+	key(left)
+inside percent: 
+	insert("%%") 
+	key(left)
+inside quotes:
+	insert('""')
+	key(left)
+angle this: 
+    text = edit.selected_text()
+    user.paste("<{text}>")
+(bracket | brace) this: 
+    text = edit.selected_text()
+    user.paste("{{{text}}}")
+(parens | args) this: 
+    text = edit.selected_text()
+    user.paste("({text})")
+percent this: 
+    text = edit.selected_text()
+    user.paste("%{text}%")
+quote this:
+    text = edit.selected_text()
+    user.paste('"{text}"')
+

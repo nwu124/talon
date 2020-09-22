@@ -46,3 +46,7 @@ sinker:
 	edit.line_end()
 	key(;)
 	key(enter)
+	
+slap:
+	edit.line_end()
+	key(enter)
