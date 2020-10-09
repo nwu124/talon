@@ -140,14 +140,14 @@ ctx.lists["self.symbol"] = {
     "star": "*",
     "asterisk": "*",
     "pound": "#",
-    "hash": "#",
-    "hash sign": "#",
+    #"hash": "#",
+    #"hash sign": "#",
     "number sign": "#",
     "percent": "%",
-    "percent sign": "%",
+    #"percent sign": "%",
     "caret": "^",
     "at sign": "@",
-    "and sign": "&",
+    #"and sign": "&",
     "ampersand": "&",
     "amper": "&",
     "pipe": "|",
@@ -187,7 +187,7 @@ alternate_keys = {
     "ground": "down",
     "goop": "pageup",
     "slide": "pagedown",
-    #'junk': 'backspace',
+    'junk': 'backspace',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)

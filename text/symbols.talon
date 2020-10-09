@@ -7,6 +7,7 @@ deminus: " - "
 duster: " * "
 divy: " / "
 model: " % "
+assign: " = "
 
 small comment: "// "
 open comment: "/* "

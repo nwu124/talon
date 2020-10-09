@@ -14,6 +14,7 @@ bookmark tabs: browser.bookmark_tabs()
 
 (refresh | reload) it: browser.reload()
 (refresh | reload) it hard: browser.reload_hard()
+reopen tab: key(ctrl-shift-t)
 
 spring: key(ctrl-t)
 crack: key(ctrl-w)
