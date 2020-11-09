@@ -50,7 +50,7 @@ action(user.code_state_while):
 action(user.code_import):
     insert("library()")
     key(left)
-action(user.code_comment): "#"
+# action(user.code_comment): "#"
 action(user.code_state_return):
    insert("return()")
    key(left)

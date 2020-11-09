@@ -33,7 +33,7 @@ state type deaf struct:
 	insert("{{\n\n}}")
 	edit.up()
 	key(tab)
-comment py: insert("# ")
+# comment py: insert("# ")
 dunder in it: insert("__init__")
 self taught: 
 	insert("self.")

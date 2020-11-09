@@ -31,6 +31,6 @@ tags:
 user:
 	insert("user.")
 	
-comment: 
-	edit.line_start()
-	insert("#")
+# comment: 
+# 	edit.line_start()
+# 	insert("#")

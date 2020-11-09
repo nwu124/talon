@@ -1,9 +1,6 @@
 history:
 	key(win-v)	
 
-save:
-    key(ctrl-s)
-    
 lefter: 
 	edit.word_left()
 	

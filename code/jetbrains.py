@@ -63,7 +63,6 @@ select_verbs_map = {
     "unindent": ["action EditorUnindentSelection"],
 }
 
-
 movement_verbs_map = {
     "go": [],
     "fix": ["action ShowIntentionActions"],

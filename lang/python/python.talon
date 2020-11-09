@@ -86,7 +86,7 @@ action(user.code_from_import):
     edit.word_left()
     key(space)
     edit.left()
-action(user.code_comment): "# "
+# action(user.code_comment): "# "
 action(user.code_state_return):
 	insert("return ")
 action(user.code_true): "True"
