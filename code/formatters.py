@@ -17,6 +17,21 @@ last_phrase = ""
 formatted_phrase_history = []
 formatted_phrase_history_length = 20
 
+def leading(by):
+    def func(i, word, last):
+        if i == 0:
+            word = " " + word
+        return word
+
+    return func
+
+def trailing(by):
+    def func(i, word, last):
+        if last:
+            word += by
+        return word
+
+    return func
 
 def surround(by):
     def func(i, word, last):
@@ -144,34 +159,40 @@ formatters_dict = {
     "FIRST_THREE": (NOSEP, lambda i, word, _: word[0:3]),
     "FIRST_FOUR": (NOSEP, lambda i, word, _: word[0:4]),
     "FIRST_FIVE": (NOSEP, lambda i, word, _: word[0:5]),
+    "LEADING": (SEP, leading(' ')),
+    "TRAILING": (SEP, trailing(' ')),
 }
 
 # This is the mapping from spoken phrases to formatters
 formatters_words = {
-    "allcaps": formatters_dict["ALL_CAPS"],
-    "alldown": formatters_dict["ALL_LOWERCASE"],
-    "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "dotted": formatters_dict["DOT_SEPARATED"],
-    "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
-    # "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
-    "kebab": formatters_dict["DASH_SEPARATED"],
-    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     "say": formatters_dict["NOOP"],
     "big": formatters_dict["CAPITALIZE_FIRST_WORD"],
-    # "slasher": formatters_dict["SLASH_SEPARATED"],
-    "smash": formatters_dict["NO_SPACES"],
-    "snake": formatters_dict["SNAKE_CASE"],
-    # "speak": formatters_dict["NOOP"],
-    # "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    "allcaps": formatters_dict["ALL_CAPS"],
+    "alldown": formatters_dict["ALL_LOWERCASE"],
+    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
+    "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
+
+    "head": formatters_dict["LEADING"],
+    "trail": formatters_dict["TRAILING"],
+    "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
+    "smash": formatters_dict["NO_SPACES"],
+    
+    "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
+    # "string": formatters_dict["SINGLE_QUOTED_STRING"],
+    "snake": formatters_dict["SNAKE_CASE"],
+    "kebab": formatters_dict["DASH_SEPARATED"],
+    #"dotted": formatters_dict["DOT_SEPARATED"],
+    
     "tree": formatters_dict["FIRST_THREE"],
     "quad": formatters_dict["FIRST_FOUR"],
     "fiver": formatters_dict["FIRST_FIVE"],
+
+    # "speak": formatters_dict["NOOP"],
+    # "slasher": formatters_dict["SLASH_SEPARATED"],
+    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
+    # "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
 }
-
-
 
 all_formatters = {}
 all_formatters.update(formatters_dict)

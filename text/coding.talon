@@ -50,3 +50,14 @@ sinker:
 slap:
 	edit.line_end()
 	key(enter)
+
+static: "static "
+tip pent: "int "
+tip char: "char "
+tip byte: "byte "
+tip none: "null"
+tip empty: "void "
+tip float: "float "
+tip double: "double "
+tip long: "long "
+padded question: " ? "

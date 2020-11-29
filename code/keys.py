@@ -5,6 +5,7 @@ import sys
 
 default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
+    #die
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
@@ -83,9 +84,9 @@ ctx = Context()
 ctx.lists["self.modifier"] = {
     "alt": "alt",
     "command": "cmd",
-    "control": "ctrl",  #'troll':   'ctrl',
+    "control": "ctrl", 
     "option": "alt",
-    "shift": "shift",  #'sky':     'shift',
+    "shift": "shift", 
     "super": "super",
 }
 alphabet = dict(zip(default_alphabet, letters_string))
@@ -97,14 +98,23 @@ ctx.lists["self.symbol"] = {
     ",": ",",
     "dot": ".",
     "period": ".",
+    "question": "?",
     "semi": ";",
     "semicolon": ";",
+    "colon": ":",
     "quote": "'",
-    #"L square": "[",
-    #"left square": "[",
+    "dubquote": '"',
+
     "square": "[",
     "R square": "]",
-    #"right square": "]",
+    "paren": "(",
+    "R paren": ")",
+    "brace": "{",
+    "R brace": "}",
+    "angle": "<",
+    "rangle": ">",
+    "R angle": ">",
+
     "forward slash": "/",
     "slash": "/",
     "backslash": "\\",
@@ -112,47 +122,21 @@ ctx.lists["self.symbol"] = {
     "dash": "-",
     "equals": "=",
     "plus": "+",
-    "question mark": "?",
-    "tilde": "~",
-    "bang": "!",
-    "exclamation point": "!",
-    "dollar": "$",
-    "dollar sign": "$",
-    "down score": "_",
-    "under score": "_",
-    "colon": ":",
-    "paren": "(",
-    #"L paren": "(",
-    #"left paren": "(",
-    "R paren": ")",
-    #"right paren": ")",
-    "brace": "{",
-    #"left brace": "{",
-    "R brace": "}",
-    #"right brace": "}",
-    "angle": "<",
-    #"left angle": "<",
-    "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
-    #"right angle": ">",
-    "greater than": ">",
     "star": "*",
     "asterisk": "*",
+
+    "tilde": "~",
+    "bang": "!",
+    "dollar": "$",
+    "down score": "_",
     "pound": "#",
-    #"hash": "#",
-    #"hash sign": "#",
     "number sign": "#",
     "percent": "%",
-    #"percent sign": "%",
     "caret": "^",
     "at sign": "@",
-    #"and sign": "&",
-    "ampersand": "&",
     "amper": "&",
     "pipe": "|",
-    "dubquote": '"',
-    "double quote": '"',
+
 }
 
 
@@ -185,7 +169,7 @@ alternate_keys = {
     "push": "right",
     "sky": "up",
     "ground": "down",
-    "goop": "pageup",
+    "bail": "pageup",
     "slide": "pagedown",
     'junk': 'backspace',
 }
