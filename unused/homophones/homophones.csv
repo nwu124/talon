@@ -1,3 +1,5 @@
+instructor,constructor
+
 Abel,able
 Adam,atom
 Cain,cane
@@ -404,7 +406,7 @@ not,knot
 oar,or,ore
 ode,owed
 oh,owe
-our,hour
+our,hour,are
 outcaste,outcast
 overdue,overdo
 oversees,overseas
@@ -474,7 +476,8 @@ reek,wreak
 residence,residents
 rest,wrest
 retch,wretch
-review,revue
+review,revue,reveal
+reviews,revues,reveals
 rigor,rigger
 ring,wring
 rite,right,write
@@ -557,7 +560,8 @@ taut,taught
 tea,tee
 team,teem
 teas,tease,tees
-tear,tare
+tear,tare,tier
+tears,tiers
 tens,tends
 tents,tense
 than,then
@@ -601,6 +605,7 @@ venous,Venus
 verses,versus
 very,vary
 vial,vile
+view,feels,vehicles,veal
 vise,vice
 waist,waste
 wait,weight

@@ -51,7 +51,11 @@ slap:
 	edit.line_end()
 	key(enter)
 
-static: "static "
+args: 
+	"()"
+	key(left)
+
+tip static: "static "
 tip pent: "int "
 tip char: "char "
 tip byte: "byte "
@@ -60,4 +64,8 @@ tip empty: "void "
 tip float: "float "
 tip double: "double "
 tip long: "long "
+tip new: "new "
 padded question: " ? "
+
+coffee: "Java"
+getter: "GitHub"

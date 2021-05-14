@@ -107,13 +107,16 @@ ctx.lists["self.symbol"] = {
 
     "square": "[",
     "R square": "]",
+    "close square": "]",
     "paren": "(",
     "R paren": ")",
+    "close paren": ")",
     "brace": "{",
     "R brace": "}",
+    "close brace": "}",
     "angle": "<",
-    "rangle": ">",
     "R angle": ">",
+    "close angle": ">",
 
     "forward slash": "/",
     "slash": "/",
@@ -126,7 +129,7 @@ ctx.lists["self.symbol"] = {
     "asterisk": "*",
 
     "tilde": "~",
-    "bang": "!",
+    "banger": "!",
     "dollar": "$",
     "down score": "_",
     "pound": "#",

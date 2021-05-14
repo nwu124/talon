@@ -1,8 +1,11 @@
 quest: "? "
+bang: "! "
+pad colon: " : "
 coalgap: ": "
 semigap: "; "
 snap: ", "
 spit: ". "
+pounder: "# "
 
 deplush: " + "
 deminus: " - "
@@ -12,7 +15,7 @@ model: " % "
 assign: " = "
 
 small comment: "// "
-open comment: "/* "
+open comment: "/**"
 close comment: "*/"
 
 minus equals: " -= "
@@ -33,6 +36,8 @@ logical left shift: " << "
 logical rate shift: " >> "
 arrow: "->"
 dub arrow: "=>"
+pad arrow: " -> "
+pad dub arrow: " => "
 
 inside paren:
 	insert("()")
