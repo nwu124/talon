@@ -182,16 +182,17 @@ formatters_words = {
     # "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "snake": formatters_dict["SNAKE_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
-    #"dotted": formatters_dict["DOT_SEPARATED"],
+    "dotted": formatters_dict["DOT_SEPARATED"],
+    "slasher": formatters_dict["SLASH_SEPARATED"],
     
     "tree": formatters_dict["FIRST_THREE"],
     "quad": formatters_dict["FIRST_FOUR"],
     "fiver": formatters_dict["FIRST_FIVE"],
 
     # "speak": formatters_dict["NOOP"],
-    # "slasher": formatters_dict["SLASH_SEPARATED"],
+    
     # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    # "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
+    "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
 }
 
 all_formatters = {}
