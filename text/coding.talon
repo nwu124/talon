@@ -55,6 +55,9 @@ args:
 	"()"
 	key(left)
 
+peak:
+	key(alt-f12)
+
 tip static: "static "
 tip pent: "int "
 tip char: "char "
@@ -69,3 +72,4 @@ padded question: " ? "
 
 coffee: "Java"
 getter: "GitHub"
+cobra: "python"
