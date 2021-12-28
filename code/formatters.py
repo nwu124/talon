@@ -173,8 +173,8 @@ formatters_words = {
     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
     "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
 
-    "head": formatters_dict["LEADING"],
-    "trail": formatters_dict["TRAILING"],
+    "front": formatters_dict["LEADING"],
+    "back": formatters_dict["TRAILING"],
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     "smash": formatters_dict["NO_SPACES"],
     
