@@ -2,6 +2,7 @@ instructor,constructor
 
 Abel,able
 Adam,atom
+Brent,print
 Cain,cane
 Chile,chilly,chili
 Czech,check
@@ -234,6 +235,8 @@ flour,flower
 flue,flew,flu
 flyer,flier
 fold,foaled
+folder,voter
+folders,voters
 fore,for,four
 foregone,forgone
 foreword,forward
@@ -400,7 +403,7 @@ neigh,nay
 nice,gneiss
 nickers,knickers
 night,knight
-none,nun
+none,nun,nine
 nose,knows
 not,knot
 oar,or,ore
@@ -438,6 +441,7 @@ pi,pie
 picot,pekoe
 pigeon,pidgin
 pilot,Pilate
+pink,thank
 pique,peak,peek
 pistol,pistil
 plaque,plack
@@ -459,9 +463,12 @@ principal,principle
 prints,prince
 prophet,profit
 prose,pros
+province,providence
 purl,pearl,perl
 purveyed,pervade
 quartz,quarts
+queue,cue
+queues,cues
 quints,quince
 quire,choir
 rabbet,rabbit
