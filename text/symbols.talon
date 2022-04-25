@@ -67,4 +67,3 @@ quote this:
 square this:
     text = edit.selected_text()
     user.paste("[{text}]")
-

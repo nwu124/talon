@@ -1,4 +1,4 @@
-#defines the commands that sleep/wake Talon
+#defines the commands that sleep Talon
 not mode: sleep
 -
 ^talon sleep [<phrase>]$: speech.disable()

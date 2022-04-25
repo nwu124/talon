@@ -6,21 +6,17 @@ mod = Module()
 
 
 @ctx.action_class("edit")
-class edit_actions:
+class EditActions:
     def selected_text() -> str:
-        # try:
-        #     text = ui.focused_element().AXSelectedText
-        #     if text:
-        #         return text
-        # except Exception:
-        #     pass
-
+        with clip.capture() as s:
+            actions.edit.copy()
         try:
-            with clip.capture() as s:
-                actions.edit.copy()
             return s.get()
         except clip.NoChange:
-            return clip.get()
+            return ""
+    def line_insert_down():
+        actions.edit.line_end()
+        actions.key("enter")
 
 
 @mod.action_class
@@ -29,7 +25,17 @@ class Actions:
         """Pastes text and preserves clipboard"""
 
         with clip.revert():
-            clip.set(text)
+            clip.set_text(text)
             actions.edit.paste()
             # sleep here so that clip.revert doesn't revert the clipboard too soon
-            actions.sleep("100ms")
+            actions.sleep("150ms")
+
+    def words_left(n: int):
+        """Moves left by n words."""
+        for _ in range(n):
+            actions.edit.word_left()
+
+    def words_right(n: int):
+        """Moves right by n words."""
+        for _ in range(n):
+            actions.edit.word_right()

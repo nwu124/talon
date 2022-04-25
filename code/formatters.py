@@ -180,19 +180,17 @@ formatters_words = {
     
     "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
     # "string": formatters_dict["SINGLE_QUOTED_STRING"],
+    "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
+
     "snake": formatters_dict["SNAKE_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
     "dotted": formatters_dict["DOT_SEPARATED"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
+    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     
     "tree": formatters_dict["FIRST_THREE"],
     "quad": formatters_dict["FIRST_FOUR"],
     "fiver": formatters_dict["FIRST_FIVE"],
-
-    # "speak": formatters_dict["NOOP"],
-    
-    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
 }
 
 all_formatters = {}

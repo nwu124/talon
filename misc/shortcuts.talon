@@ -1,8 +1,0 @@
-copy: key(ctrl-c)
-cut: key(ctrl-x)
-paste: key(ctrl-v)
-undo: key(ctrl-z)
-redo: key(ctrl-y)
-file save: key(ctrl-s)  
-history: key(win-v)
-search: key(ctrl-f)

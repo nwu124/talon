@@ -6,5 +6,4 @@ desktop: key(win-d)
 snap left: key(win-left)
 snap right: key(win-right)
 snap up: key(win-up)
-snap down: key(win-down)
-
+snap down: key(win-down) 

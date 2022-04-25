@@ -69,3 +69,34 @@ clear way up:
 clear way down:
     edit.extend_file_end()
     edit.delete()
+
+#copy commands
+copy all:
+    edit.select_all()
+    edit.copy()
+copy word:
+    edit.select_word()
+    edit.copy()
+copy word left:
+    edit.extend_word_left()
+    edit.copy()
+copy word right:
+    edit.extend_word_right()
+    edit.copy()
+copy line:
+    edit.select_line()
+    edit.copy()
+
+#cut commands
+cut word:
+    edit.select_word()
+    edit.cut()
+cut word left:
+    edit.extend_word_left()
+    edit.cut()
+cut word right:
+    edit.extend_word_right()
+    edit.cut()
+cut line:
+    edit.select_line()
+    edit.cut()
