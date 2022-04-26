@@ -3,15 +3,16 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat card drum each fine gust hat ivy jane crunch look made near odd pit quench red sun trap urge vest wet plex yank zone".split(
+default_alphabet = "air bat card drum each fine gust ham ivy jane crunch look made near odd pit quench red sun trap urge vest whale plex yank zone".split(
     " "
     #die
     #bat
     #cap
     #harp
+    #hat
     #sit
     #jury
-    #whale
+    #wet
     #zip
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -239,7 +240,7 @@ alternate_keys = {
     
     "page up": "pageup",
     "page down": "pagedown",
-    "bail": "pageup",
+    "fly": "pageup",
     "slide": "pagedown",
 
     "pop": "left",
