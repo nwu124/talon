@@ -51,6 +51,9 @@ inside brace:
 inside quotes:
 	insert('""')
 	key(left)
+inside angle:
+	insert('<>')
+	key(left)
 
 angle this: 
     text = edit.selected_text()
