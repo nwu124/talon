@@ -3,6 +3,7 @@ long gamer tag: "ZchryRbbit"
 
 username: "nwu124"
 middle name: "Rei Kan"
+full name: "Nathaniel Wu"
 
 Google email: "wu.nathaniel124@gmail.com"
 school email: "nwu@seattleu.edu"
