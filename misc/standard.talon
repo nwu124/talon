@@ -5,13 +5,13 @@ zoom reset: edit.zoom_reset()
 scroll up: edit.page_up()
 scroll down: edit.page_down()
 
-copy: edit.copy()
-cut: edit.cut()
-paste: edit.paste()
+copy that: edit.copy()
+cut that: edit.cut()
+paste that: edit.paste()
 paste match: edit.paste_match_style()
 
-undo: edit.undo()
-redo: edit.redo()
+undo that: edit.undo()
+redo that: edit.redo()
 
 file save: edit.save()
 (pad | padding):
