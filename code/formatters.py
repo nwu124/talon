@@ -188,7 +188,7 @@ formatters_words = {
     "slasher": formatters_dict["SLASH_SEPARATED"],
     # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     
-    "tree": formatters_dict["FIRST_THREE"],
+    "triple": formatters_dict["FIRST_THREE"],
     "quad": formatters_dict["FIRST_FOUR"],
     "fiver": formatters_dict["FIRST_FIVE"],
 }
