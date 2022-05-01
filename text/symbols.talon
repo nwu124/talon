@@ -32,8 +32,10 @@ lessqual: " <= "
 
 logical and: " && "
 logical or: " || "
+exclusive or: " ^ "
 logical left shift: " << "
-logical rate shift: " >> "
+logical right shift: " >> "
+
 arrow: "->"
 dub arrow: "=>"
 pad arrow: " -> "
