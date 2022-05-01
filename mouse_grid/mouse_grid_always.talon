@@ -10,6 +10,6 @@ mouse <user.number_key>+:
     user.grid_activate()
     user.grid_narrow_list(number_key_list)
 
-mouse1 screen [<number>]:
+mouse screen [<number>]:
     user.grid_select_screen(number or 1)
     user.grid_activate()
