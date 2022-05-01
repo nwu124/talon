@@ -2,11 +2,11 @@ tag: user.mouse_grid_showing
 -
 <user.number_key>:
     user.grid_narrow(number_key)
-mouse off:
+control off:
     user.grid_close()
 
-mouse reset:
+control reset:
     user.grid_reset()
 
-mouse back:
+control back:
     user.grid_go_back()
