@@ -1,18 +1,21 @@
 quest: "? "
+pad quest: " ? "
+pad question: " ? "
 bang: "! "
 pad colon: " : "
-coalgap: ": "
-semigap: "; "
+colon gap: ": "
+semi gap: "; "
 snap: ", "
 spit: ". "
 pounder: "# "
 
-deplush: " + "
-deminus: " - "
+pad plus: " + "
+pad minus: " - "
 duster: " * "
 divy: " / "
 model: " % "
-assign: " = "
+pad equals: " = "
+pad equal: " = "
 
 small comment: "// "
 open comment: "/**"
@@ -50,7 +53,7 @@ inside square:
 inside brace: 
 	insert("{}") 
 	key(left)
-inside quotes:
+inside double:
 	insert('""')
 	key(left)
 inside angle:
