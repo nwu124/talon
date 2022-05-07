@@ -38,6 +38,15 @@ state while:
 	key(left)
 	key(left)
 
+state switch:
+	"switch () {"
+	key(enter)
+	key(up)
+	edit.line_end()
+	key(left)
+	key(left)
+	key(left)
+
 sink:
 	edit.line_end()
 	key(;)
