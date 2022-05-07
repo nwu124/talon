@@ -170,7 +170,7 @@ symbol_key_words = {
     "semicolon": ";",
     "colon": ":",
     "quote": "'",
-    "dubquote": '"',
+    "double quote": '"',
 
     "square": "[",
     "R square": "]",
@@ -240,8 +240,8 @@ alternate_keys = {
     
     "page up": "pageup",
     "page down": "pagedown",
-    "fly": "pageup",
-    "slide": "pagedown",
+    "flip": "pageup",
+    "fly": "pagedown",
 
     "pop": "left",
     "push": "right",
