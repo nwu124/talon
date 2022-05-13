@@ -171,7 +171,9 @@ symbol_key_words = {
     "semi": ";",
     "semicolon": ";",
     "colon": ":",
+    "single": "'",
     "quote": "'",
+    "double": '"',
     "double quote": '"',
 
     "square": "[",
