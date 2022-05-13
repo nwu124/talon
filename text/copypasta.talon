@@ -12,7 +12,7 @@ job email: "nathaniel.r.wu@gmail.com"
 
 street address: "4671 Highland Drive"
 postal code: "98006"
+city: "Bellevue"
 phone number: "4252478098"
 
-LinkedIn address: "linkedin.com/in/nathaniel-r-wu"
-full LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
+LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
