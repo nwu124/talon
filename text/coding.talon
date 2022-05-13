@@ -77,7 +77,6 @@ tip float: "float "
 tip double: "double "
 tip long: "long "
 tip new: "new "
-padded question: " ? "
 
 coffee: "Java"
 getter: "GitHub"
