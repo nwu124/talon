@@ -56,6 +56,9 @@ inside brace:
 inside double:
 	insert('""')
 	key(left)
+inside single:
+	insert("''")
+	key(left)
 inside angle:
 	insert('<>')
 	key(left)
