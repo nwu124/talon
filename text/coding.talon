@@ -29,6 +29,70 @@ state for:
 	key(left)
 	key(left)
 
+state forward:
+	"for (int i = 0; i < ; i++) {"
+	key(enter)
+	key(up)
+	edit.line_end()
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+
+state backward:
+	"for (int i = ; i >= 0; i--) {"
+	key(enter)
+	key(up)
+	edit.line_end()
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+
+state outer:
+	"for (int i = 0; i < ; i++) {"
+	key(enter)
+	key(up)
+	edit.line_end()
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+
+state inner:
+	"for (int j = 0; j < ; j++) {"
+	key(enter)
+	key(up)
+	edit.line_end()
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+	key(left)
+
 state while:
 	"while () {"
 	key(enter)
@@ -47,6 +111,11 @@ state switch:
 	key(left)
 	key(left)
 
+state print:
+	"System.out.println();"
+	key(left)
+	key(left)
+
 sink:
 	edit.line_end()
 	key(;)
@@ -60,12 +129,35 @@ slap:
 	edit.line_end()
 	key(enter)
 
+slam:
+	key(right)
+	key(space)
+	"{"
+	key(enter)
+
+scrape:
+	edit.line_end()
+	key(,)
+
+scraper:
+	edit.line_end()
+	key(,)
+	key(enter)
+
+spacer:
+	key(enter)
+	key(enter)
+
 args: 
 	"()"
 	key(left)
 
 peak:
 	key(alt-f12)
+
+finish method:
+	"() {"
+	key(enter)
 
 tip static: "static "
 tip pent: "int "
@@ -78,7 +170,14 @@ tip double: "double "
 tip long: "long "
 tip new: "new "
 
+
 coffee: "Java"
 getter: "GitHub"
 
 binary: "boolean "
+table: "array"
+big table: "Array"
+line: "queue"
+big line: "Queue"
+deck: "deque"
+big deck: "Deque"
