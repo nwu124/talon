@@ -16,3 +16,5 @@ city: "Bellevue"
 phone number: "4252478098"
 
 LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
+
+greetings: "Hi "
