@@ -1,3 +1,8 @@
+state check:
+	"if () "
+	key(left)
+	key(left)
+
 state if:
 	"if () {"
 	key(enter)
@@ -130,7 +135,7 @@ slap:
 	key(enter)
 
 slam:
-	key(right)
+	edit.line_end()
 	key(space)
 	"{"
 	key(enter)
