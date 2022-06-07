@@ -1,5 +1,5 @@
 mission: key(win-tab)
-close window: key(alt-f4)
+kill window: key(alt-f4)
 switch: key(alt-tab)
 desktop: key(win-d)
 
