@@ -13,7 +13,7 @@ go private: browser.open_private_window()
 
 (refresh | reload): key(ctrl-r)
 reopen tab: key(ctrl-shift-t)
-close tab: key(ctrl-w)
+kill tab: key(ctrl-w)
 spring: key(ctrl-t)
 # crack: key(ctrl-w)
 
