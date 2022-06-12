@@ -152,6 +152,7 @@ scraper:
 spacer:
 	key(enter)
 	key(enter)
+	key(enter)
 
 args: 
 	"()"
@@ -186,3 +187,5 @@ line: "queue"
 big line: "Queue"
 deck: "deque"
 big deck: "Deque"
+
+fetch: "get"
