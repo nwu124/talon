@@ -59,6 +59,9 @@ inside double:
 inside single:
 	insert("''")
 	key(left)
+inside quote:
+	insert("''")
+	key(left)
 inside angle:
 	insert('<>')
 	key(left)
