@@ -184,7 +184,7 @@ formatters_words = {
 
     "snake": formatters_dict["SNAKE_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
-    "dotted": formatters_dict["DOT_SEPARATED"],
+    "period": formatters_dict["DOT_SEPARATED"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
     # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     
