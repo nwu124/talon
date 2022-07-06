@@ -1,25 +1,20 @@
 state check:
 	"if () "
-	key(left)
-	key(left)
+	key(left:2)
 
 state if:
 	"if () {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
+	key(left:3)
 
 state else if:
 	"else if () {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
+	key(left:3)
 
 state else:
 	"else {"
@@ -30,96 +25,53 @@ state for:
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
+	key(left:3)
 
 state forward:
 	"for (int i = 0; i < ; i++) {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
+	key(left:8)
 
 state backward:
 	"for (int i = ; i >= 0; i--) {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
+	key(left:16)
 
 state outer:
 	"for (int i = 0; i < ; i++) {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
+	key(left:8)
 
 state inner:
 	"for (int j = 0; j < ; j++) {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
-	key(left)
+	key(left:8)
 
 state while:
 	"while () {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
+	key(left:3)
 
 state switch:
 	"switch () {"
 	key(enter)
 	key(up)
 	edit.line_end()
-	key(left)
-	key(left)
-	key(left)
+	key(left:3)
 
 state print:
 	"System.out.println();"
-	key(left)
-	key(left)
+	key(left:2)
 
 sink:
 	edit.line_end()
@@ -150,9 +102,7 @@ scraper:
 	key(enter)
 
 spacer:
-	key(enter)
-	key(enter)
-	key(enter)
+	key(enter:3)
 
 args: 
 	"()"
