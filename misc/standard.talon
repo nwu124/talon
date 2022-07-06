@@ -19,5 +19,5 @@ file save: edit.save()
 	key(left)
 
 history: key(win-v)
-search: key(ctrl-f)
+search: edit.find()
 start menu: key(win)
