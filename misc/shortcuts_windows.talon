@@ -11,4 +11,4 @@ snap up: key(win-up)
 snap down: key(win-down) 
 
 start menu: key(win)
-history: key(win-v)
+clipboard: key(win-v)

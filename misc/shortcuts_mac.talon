@@ -1,8 +1,6 @@
 os: mac
 -
-mission: key(win-tab)
-kill window: key(alt-f4)
+kill window: key(alt-cmd-w)
 switch: key(cmd-tab)
-desktop: key(win-d)
 
-
+clipboard: key(ctrl-space)
