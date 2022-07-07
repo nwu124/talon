@@ -14,10 +14,4 @@ undo that: edit.undo()
 redo that: edit.redo()
 
 file save: edit.save()
-(pad | padding):
-	insert("  ")
-	key(left)
-
-history: key(win-v)
 search: edit.find()
-start menu: key(win)

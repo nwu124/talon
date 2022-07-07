@@ -139,3 +139,7 @@ deck: "deque"
 big deck: "Deque"
 
 fetch: "get"
+
+(pad | padding):
+	insert("  ")
+	key(left)
