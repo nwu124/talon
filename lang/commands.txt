@@ -1,0 +1,46 @@
+box [boxed_type]
+structure [data_structure]
+[primitive] array
+state [declaration]
+op new
+op equals/minus/plus/times/divide
+tip [primitive]
+(pro/pub) (static) funky [name]
+state (true/false/null)
+is (not) (none/null)
+state if/else/while/loop (imperative.talon)
+
+comments
+block comment
+comment line
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
