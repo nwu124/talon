@@ -2,6 +2,7 @@ gamer tag: "ZchryRbbt"
 long gamer tag: "ZchryRbbit"
 
 username: "nwu124"
+Citrix username: "nathanielw"
 middle name: "Rei Kan"
 full name: "Nathaniel Wu"
 
