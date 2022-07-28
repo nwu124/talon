@@ -6,6 +6,7 @@ comment line:
     #.talon supports implementing actions with parameters?
 	edit.line_start()
     user.code_comment_line_prefix()
+    insert(" ")
 #adds comment to the start of the line
 comment line <user.text> over:
     #todo: this should probably be a single function once
