@@ -5,11 +5,66 @@ ctx.matches = r"""
 tag: user.csharp
 """
 ctx.lists["user.code_common_function"] = {
+    # Used as "funk <phrase>"
     "integer": "int.TryParse",
     "print": "Console.WriteLine",
     "string": ".ToString",
 }
 
+# Types
+csharp_types = {
+    "boolean": "bool",
+    "byte": "byte",
+    #"sbyte": "sbyte",
+    "char": "char",
+    "decimal": "decimal",
+    "double": "double",
+    "float": "float",
+    "int": "int",
+    #"uint": "uint",
+    #"nint": "nint",
+    #"nuint": "nuint",
+    "long": "long",
+    #"ulong": "ulong",
+    "short": "short",
+    #"ushort": "ushort",
+
+    "void": "void",
+    "var": "var",
+
+    "object": "object",
+    "string": "string",
+    "dynamic": "dynamic",
+}
+
+# Structures
+csharp_structures = {
+    "stack": "Stack",
+    "queue": "Queue",    
+    "list": "List",
+
+    "priority cu": "PriorityQueue",
+    "priority cue": "PriorityQueue",
+    "priority queue": "PriorityQueue",
+    "dictionary": "Dictionary",
+    "sorted dictionary": "SortedDictionary",
+    "hash set": "HashSet",
+    "sorted set": "SortedSet",
+    "link to list": "LinkedList",
+    "linked list": "LinkedList",
+    "ray list": "ArrayList",
+    "array list": "ArrayList",
+
+    # Commonly used classes
+    "string builder": "StringBuilder",
+    "ray": "Array",
+    "array": "Array",
+}
+
+terms = csharp_types.copy()
+terms.update(csharp_structures)
+
+ctx.lists["user.code_type"] = terms
 
 @ctx.action_class("user")
 class UserActions:
@@ -90,7 +145,7 @@ class UserActions:
     def code_insert_true():           actions.auto_insert('true')
     def code_insert_false():          actions.auto_insert('false')
     def code_define_class():     actions.auto_insert('class ')
-    def code_import():         actions.auto_insert('using  ')
+    def code_import():         actions.auto_insert('using ')
     def code_comment_line_prefix():        actions.auto_insert('//')
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"
