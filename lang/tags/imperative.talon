@@ -15,3 +15,10 @@ state goto: user.code_state_go_to()
 state return: user.code_state_return()
 state break: user.code_break()
 state next: user.code_next()
+
+
+#state check: if with no brace 
+#state forward
+#state backward
+#state outer
+#state inner
