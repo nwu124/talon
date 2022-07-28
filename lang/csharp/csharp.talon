@@ -24,3 +24,15 @@ settings():
     user.code_private_variable_formatter = "PRIVATE_CAMEL_CASE"
     user.code_protected_variable_formatter = "PUBLIC_CAMEL_CASE"
     user.code_public_variable_formatter = "PUBLIC_CAMEL_CASE"
+
+# Type Commands
+structure [type] {user.csharp_structures}:
+    user.insert_between(csharp_structures + "<", ">")
+
+# Arrays
+{user.code_type} array:
+    insert(user.code_type)
+    user.code_operator_subscript()
+
+op new:
+    insert("new ")
