@@ -7,6 +7,7 @@ colon gap: ": "
 semi gap: "; "
 snap: ", "
 spit: ". "
+pad pipe: " | "
 
 inside paren:
 	insert("()")
@@ -42,6 +43,12 @@ paren this:
 quote this:
     text = edit.selected_text()
     user.paste('"{text}"')
+single this:
+	text = edit.selected_text()
+	user.paste('\'{text}\'')
+double this:
+	text = edit.selected_text()
+	user.paste('"{text}"')
 square this:
     text = edit.selected_text()
     user.paste("[{text}]")
