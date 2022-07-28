@@ -10,9 +10,9 @@ op mod: user.code_operator_modulo()
 (op (power | exponent) | to the power [of]): user.code_operator_exponent()
 
 # comparison operators
-(op | is) equal: user.code_operator_equal()
+#(op | is) equal: user.code_operator_equal()
 longqual: user.code_operator_equal()
-(op | is) not equal: user.code_operator_not_equal()
+#(op | is) not equal: user.code_operator_not_equal()
 bangqual: user.code_operator_not_equal()
 (op | is) (greater | more): user.code_operator_greater_than()
 (op | is) (less | below) [than]: user.code_operator_less_than()
