@@ -1,6 +1,7 @@
 from talon import Context, Module, actions, settings
 
 ctx = Context()
+mod = Module()
 ctx.matches = r"""
 tag: user.csharp
 """
@@ -40,6 +41,8 @@ csharp_types = {
 # Structures
 csharp_structures = {
     "stack": "Stack",
+    "cu": "Queue",    
+    "cue": "Queue",    
     "queue": "Queue",    
     "list": "List",
 
@@ -65,6 +68,9 @@ terms = csharp_types.copy()
 terms.update(csharp_structures)
 
 ctx.lists["user.code_type"] = terms
+
+mod.list("csharp_structures", desc="C# Generic Data Structures")
+ctx.lists["self.csharp_structures"] = csharp_structures
 
 @ctx.action_class("user")
 class UserActions:
