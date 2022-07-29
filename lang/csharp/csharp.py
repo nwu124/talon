@@ -152,7 +152,7 @@ class UserActions:
     def code_insert_false():          actions.auto_insert('false')
     def code_define_class():     actions.auto_insert('class ')
     def code_import():         actions.auto_insert('using ')
-    def code_comment_line_prefix():        actions.auto_insert('//')
+    def code_comment_line_prefix():        actions.auto_insert('// ')
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"
         actions.user.paste(text)
