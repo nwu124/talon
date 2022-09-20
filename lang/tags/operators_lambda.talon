@@ -11,3 +11,7 @@ tag: user.code_operators_lambda
 
 # syntax for anonymous functions
 op lambda: user.code_operator_lambda()
+pad lambda: 
+    key(space)
+    user.code_operator_lambda()
+    key(space)
