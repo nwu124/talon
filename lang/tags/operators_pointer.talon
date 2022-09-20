@@ -4,3 +4,7 @@ tag: user.code_operators_pointer
 op dereference: user.code_operator_indirection()
 op address of: user.code_operator_address_of()
 op arrow: user.code_operator_structure_dereference()
+pad arrow: 
+    key(space)
+    user.code_operator_structure_dereference()
+    key(space)
