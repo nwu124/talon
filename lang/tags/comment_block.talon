@@ -45,7 +45,7 @@ block comment <user.text>$:
     insert(user.text)
     key(space)
    	user.code_comment_block_suffix()
-open block comment:
+open comment:
     user.code_comment_block_prefix()
-close block comment:
+close comment:
     user.code_comment_block_suffix()
