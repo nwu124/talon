@@ -11,6 +11,8 @@ school email: "nwu@seattleu.edu"
 Microsoft email: "wu.nathaniel124@hotmail.com"
 job email: "nathaniel.r.wu@gmail.com"
 Citrix email: "nathaniel.wu@citrix.com"
+Tibco email: "nwu@tibco.com"
+cloud email: "Nathaniel.Wu@cloud.com"
 
 street address: "4671 Highland Drive"
 postal code: "98006"
