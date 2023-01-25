@@ -24,3 +24,4 @@ getter: "GitHub"
 
 greetings: "Hi "
 short laugh: "lol"
+curl: "URL"
