@@ -48,6 +48,7 @@ async,acing
 async,a sink
 invalid,in valid
 Tibco,Tepco
+Tibco,tepco
 none,nun
 none,non
 alright,all right
@@ -65,3 +66,6 @@ splunk,plunk
 central,centro
 azure,ashur
 hey,hay
+query,quarry
+cmdlet,baby command
+overwrite,over right
