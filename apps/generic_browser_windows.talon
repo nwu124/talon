@@ -26,3 +26,6 @@ go sixth: key(ctrl-6)
 go seventh: key(ctrl-7)
 go eighth: key(ctrl-8)
 go ninth: key(ctrl-9)
+
+go top: key(ctrl-up)
+go bottom: key(ctrl-down)
