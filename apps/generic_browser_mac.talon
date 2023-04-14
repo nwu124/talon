@@ -26,3 +26,6 @@ go sixth: key(cmd-6)
 go seventh: key(cmd-7)
 go eighth: key(cmd-8)
 go ninth: key(cmd-9)
+
+go top: key(ctrl-home)
+go bottom: key(ctrl-end)
