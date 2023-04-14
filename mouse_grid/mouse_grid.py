@@ -14,7 +14,7 @@ mod = Module()
 narrow_expansion = mod.setting(
     "grid_narrow_expansion",
     type=int,
-    default=0,
+    default=10,
     desc="""After narrowing, grow the new region by this many pixels in every direction, to make things immediately on edges easier to hit, and when the grid is at its smallest, it allows you to still nudge it around""",
 )
 
