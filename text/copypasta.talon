@@ -30,3 +30,10 @@ big curl: "URL"
 curl: "url"
 sequel: "SQL"
 Microsoft: "Azure"
+
+arrow: "->"
+pad arrow: " -> "
+signature: 
+    "Thanks,"
+    key(enter)
+    "Nathaniel"
