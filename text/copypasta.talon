@@ -34,6 +34,6 @@ Microsoft: "Azure"
 arrow: "->"
 pad arrow: " -> "
 signature: 
-    "Thanks,"
+    "Thanks!"
     key(enter)
     "Nathaniel"
