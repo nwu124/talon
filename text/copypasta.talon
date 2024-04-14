@@ -30,6 +30,8 @@ big curl: "URL"
 curl: "url"
 sequel: "SQL"
 Microsoft: "Azure"
+alone: "dedup"
+pad alone: " dedup "
 
 arrow: "->"
 pad arrow: " -> "
