@@ -32,6 +32,7 @@ sequel: "SQL"
 Microsoft: "Azure"
 alone: "dedup"
 pad alone: " dedup "
+looking: "I see, "
 
 arrow: "->"
 pad arrow: " -> "
