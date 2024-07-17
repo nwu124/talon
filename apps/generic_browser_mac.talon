@@ -14,7 +14,7 @@ go private: browser.open_private_window()
 
 (refresh | reload): browser.reload()
 reopen tab: key(cmd-shift-t)
-kill tab: key(cmd-w)
+murder tab: key(cmd-w)
 spring: key(cmd-t)
 
 go first: key(cmd-1)
