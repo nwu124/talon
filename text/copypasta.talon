@@ -21,6 +21,8 @@ street address: "4671 Highland Drive"
 postal code: "98006"
 city: "Bellevue"
 phone number: "4252478098"
+birthday: "091595"
+long birthday: "09151995"
 
 LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
 getter: "GitHub"
@@ -34,9 +36,11 @@ Microsoft: "Azure"
 alone: "dedup"
 pad alone: " dedup "
 looking: "I see, "
+unique: "GUID"
 
 arrow: "->"
 pad arrow: " -> "
+pad minus: " - "
 signature: 
     "Thanks!"
     key(enter)
