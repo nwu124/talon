@@ -1,7 +1,7 @@
 os: windows
 -
 mission: key(win-tab)
-kill window: key(alt-f4)
+murder window: key(alt-f4)
 switch: key(alt-tab)
 desktop: key(win-d)
 
