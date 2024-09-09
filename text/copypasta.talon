@@ -37,6 +37,8 @@ alone: "dedup"
 pad alone: " dedup "
 looking: "I see, "
 unique: "GUID"
+example: "e.g. "
+government: "Gov "
 
 arrow: "->"
 pad arrow: " -> "
