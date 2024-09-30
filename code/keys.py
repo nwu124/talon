@@ -243,7 +243,7 @@ simple_keys = [
 
 alternate_keys = {
     "delete": "backspace",
-    "junk": "backspace",
+    "kill": "backspace",
     "forward delete": "delete",
     "trash": "delete",
     
