@@ -38,11 +38,15 @@ pad alone: " dedup "
 looking: "I see, "
 unique: "GUID"
 example: "e.g. "
-government: "Gov "
+government: "Gov"
+broker prefix: "BRK-"
+prefix: "XAC-"
+acknowledged: "Got it, "
 
 arrow: "->"
 pad arrow: " -> "
 pad minus: " - "
+pad equal: " = "
 signature: 
     "Thanks!"
     key(enter)
