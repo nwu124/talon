@@ -9,6 +9,12 @@ semi gap: "; "
 snap: ", "
 spit: ". "
 pad pipe: " | "
+arrow: "->"
+pad arrow: " -> "
+dub arrow: "=>"
+pad dub arrow: " => "
+pad minus: " - "
+pad equal: " = "
 
 inside paren:
 	insert("()")
