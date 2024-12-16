@@ -28,7 +28,7 @@ LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
 getter: "GitHub"
 
 greetings: "Hi "
-short laugh: "lol"
+laugh: "lol"
 big curl: "URL"
 curl: "url"
 sequel: "SQL"
