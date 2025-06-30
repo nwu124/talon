@@ -29,3 +29,6 @@ go ninth: key(cmd-9)
 
 go top: key(ctrl-home)
 go bottom: key(ctrl-end)
+
+next chapter: key(alt-right)
+previous chapter: key(alt-left)

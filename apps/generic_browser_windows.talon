@@ -29,3 +29,6 @@ go ninth: key(ctrl-9)
 
 go top: key(ctrl-up)
 go bottom: key(ctrl-down)
+
+next chapter: key(ctrl-right)
+previous chapter: key(ctrl-left)
