@@ -26,6 +26,7 @@ long birthday: "09151995"
 
 LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
 getter: "GitHub"
+version: "git "
 
 greetings: "Hi "
 laugh: "lol"
@@ -65,6 +66,8 @@ gateway: "API-GW"
 application: "API"
 authentication: "Auth"
 virtual: "VM"
+line: "queue"
+
 
 
 signature: 
