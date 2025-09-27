@@ -15,6 +15,9 @@ dub arrow: "=>"
 pad dub arrow: " => "
 pad minus: " - "
 pad equal: " = "
+pad plus: " + "
+pad star: " * "
+pad slash: " / "
 
 inside paren:
 	insert("()")
