@@ -27,6 +27,17 @@ long birthday: "09151995"
 LinkedIn address: "https://www.linkedin.com/in/nathaniel-r-wu/"
 getter: "GitHub"
 version: "git "
+version fetch: "git fetch"
+version pull: "git pull"
+version checkout: "git checkout "
+version cherry pick: "git cherry-pick "
+version agent: "eval \"$(ssh-agent -s)\""
+version load key: "ssh-add C:/Users/Nathaniel.Wu/.ssh/eddsa.ssh"
+
+build directory: "cd C:\\repos\\appmanagement"
+build leasing service: ".\\buck build //geo_hub/services/internal/leasing_service/..."
+build leasing sync service: ".\\buck build //geo_hub/services/internal/leasing_sync_service/..."
+build root of trust: ".\\buck build //geo_hub/services/internal/root_of_trust/..."
 
 greetings: "Hi "
 laugh: "lol"
@@ -67,7 +78,7 @@ application: "API"
 authentication: "Auth"
 virtual: "VM"
 line: "queue"
-
+address prefix: "https://"
 
 
 signature: 
@@ -83,3 +94,4 @@ coworker three: "Akshay"
 Citrix test customer: "udk2s7pthfla"
 Citrix test user: "nathanielw.local\\User1"
 Citrix test administrator: "nathanielw.local\\Administrator"
+
