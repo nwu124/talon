@@ -18,6 +18,7 @@ pad equal: " = "
 pad plus: " + "
 pad star: " * "
 pad slash: " / "
+pad amper: " & "
 
 inside paren:
 	insert("()")
