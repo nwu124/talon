@@ -57,6 +57,8 @@ build leasing service: ".\\buck build //geo_hub/services/internal/leasing_servic
 build leasing sync service: ".\\buck build //geo_hub/services/internal/leasing_sync_service/..."
 build root of trust: ".\\buck build //geo_hub/services/internal/root_of_trust/..."
 
+bypass: "env.deploy_bypass_jira_release_card"
+
 greetings: "Hi "
 laugh: "lol"
 short laugh: "lol"
@@ -106,6 +108,10 @@ instance: "EC2"
 leasing: "LS"
 sync service: "LSS"
 root: "ROT"
+vault: "key vault"
+estimate: "ETA"
+end of day: "EOD"
+end of week: "EOW"
 
 signature: 
     "Thanks!"
