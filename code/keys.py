@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bar card drum each fine gust ham ivy jane crunch look made near odd pink quit red shake trap unit vest whale plex yank zone".split(
+default_alphabet = "air bar card drum each fine gust ham ivy jane crunch look made near orc pink quit red shake trap unit vest whale plex yank zap".split(
     " "
     #die
     #bat
@@ -21,6 +21,8 @@ default_alphabet = "air bar card drum each fine gust ham ivy jane crunch look ma
     #split
     #quench
     #urge
+    #odd
+    #zap
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
