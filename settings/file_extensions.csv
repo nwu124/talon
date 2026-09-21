@@ -1,16 +1,13 @@
 File extension,Name
 .py,dot pie
+.ex,dot elixir
 .talon,dot talon
+.talon-list,dot talon list
 .md,dot mark down
 .sh,dot shell
 .vim,dot vim
 .c,dot see
 .cs,dot see sharp
-.com,dot com
-.net,dot net
-.org,dot org
-.us,dot us
-.us,dot U S
 .exe,dot exe
 .bin,dot bin
 .bin,dot bend
@@ -25,6 +22,23 @@ File extension,Name
 .csv,tot csv
 .csv,dot cassie
 .txt,dot text
-.zip,dot zipper
+.jl,dot julia
+.jl,dot J L
+.html,dot html
+.css,dot css
+.sass,dot sass
+.svg,dot svg
+.png,dot png
+.wav,dot wave
+.flac,dot flack
+.doc,dot doc
+.docx,dot doc x
+.pdf,dot pdf
+.tar,dot tar
+.gz,dot g z
+.gzip,dot g zip
 .zip,dot zip
-.yml,dot yam
+.toml,dot toml
+.java,dot java
+.class,dot class
+.log,dot log

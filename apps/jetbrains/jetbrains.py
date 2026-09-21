@@ -1,14 +1,13 @@
 import os
 import os.path
-import requests
-import time
-from pathlib import Path
-from talon import ctrl, ui, Module, Context, actions, clip
 import tempfile
+from pathlib import Path
+from typing import Optional
+
+import requests
+from talon import Context, Module, actions, app, clip, ui
 
 # Courtesy of https://github.com/anonfunc/talon-user/blob/master/apps/jetbrains.py
-
-extendCommands = []
 
 # Each IDE gets its own port, as otherwise you wouldn't be able
 # to run two at the same time and switch between them.
@@ -32,6 +31,8 @@ port_mapping = {
     "google-android-studio": 8652,
     "idea64.exe": 8653,
     "IntelliJ IDEA": 8653,
+    "IntelliJ IDEA Ultimate Edition": 8653,
+    "IntelliJ IDEA Community Edition": 8654,
     "jetbrains-appcode": 8655,
     "jetbrains-clion": 8657,
     "jetbrains-datagrip": 8664,
@@ -55,89 +56,103 @@ port_mapping = {
     "pycharm64.exe": 8658,
     "WebStorm": 8663,
     "webstorm64.exe": 8663,
+    "PhpStorm": 8662,
+    # Local plugin development:
+    "com.jetbrains.jbr.java": 8666,
 }
 
 
-def _get_nonce(port, file_prefix):
+def _get_nonce(port: int, file_prefix: str) -> Optional[str]:
     file_name = file_prefix + str(port)
     try:
-        with open(os.path.join(tempfile.gettempdir(), file_name), "r") as fh:
+        with open(os.path.join(tempfile.gettempdir(), file_name)) as fh:
             return fh.read()
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         try:
-            home = str(Path.home())
-            with open(os.path.join(home, file_name), "r") as fh:
+            with open(Path.home() / file_name) as fh:
                 return fh.read()
-        except FileNotFoundError as eb:
+        except FileNotFoundError:
             print(f"Could not find {file_name} in tmp or home")
             return None
-    except IOError as e:
+    except OSError as e:
         print(e)
         return None
 
 
-def send_idea_command(cmd):
-    print("Sending {}".format(cmd))
+def send_idea_command(cmd: str) -> str:
     active_app = ui.active_app()
     bundle = active_app.bundle or active_app.name
-    port = port_mapping.get(bundle, None)
+    port = port_mapping.get(bundle)
+    if not port:
+        raise Exception(f"unknown application {bundle}")
     nonce = _get_nonce(port, ".vcidea_") or _get_nonce(port, "vcidea_")
-    proxies = {"http": None, "https": None}
-    print(f"sending {bundle} {port} {nonce}")
-    if port and nonce:
-        response = requests.get(
-            "http://localhost:{}/{}/{}".format(port, nonce, cmd),
-            proxies=proxies,
-            timeout=(0.05, 3.05),
-        )
-        response.raise_for_status()
-        return response.text
+    if not nonce:
+        raise FileNotFoundError(f"Couldn't find IDEA nonce file for port {port}")
+
+    response = requests.get(
+        f"http://localhost:{port}/{nonce}/{cmd}",
+        proxies={"http": None, "https": None},
+        timeout=(0.05, 3.05),
+    )
+    response.raise_for_status()
+    return response.text
 
 
-def get_idea_location():
+def get_idea_location() -> list[str]:
     return send_idea_command("location").split()
-
-
-def idea_commands(commands):
-    command_list = commands.split(",")
-    print("executing jetbrains", commands)
-    global extendCommands
-    extendCommands = command_list
-    for cmd in command_list:
-        if cmd:
-            send_idea_command(cmd.strip())
-            time.sleep(0.1)
 
 
 ctx = Context()
 mod = Module()
 
 mod.apps.jetbrains = "app.name: /jetbrains/"
-mod.apps.jetbrains = "app.name: CLion"
-mod.apps.jetbrains = "app.name: IntelliJ IDEA"
-mod.apps.jetbrains = "app.name: PyCharm"
-mod.apps.jetbrains = "app.name: WebStorm"
-mod.apps.jetbrains = "app.name: RubyMine"
-mod.apps.jetbrains = "app.name: RubyMine-EAP"
-mod.apps.jetbrains = "app.name: DataGrip"
+appNames = [
+    "CLion",
+    "IntelliJ IDEA",
+    "PhpStorm",
+    "PyCharm",
+    "Webstorm",
+    "RubyMine",
+    "DataGrip",
+]
+for appName in appNames:
+    mod.apps.jetbrains = f"app.name: {appName}"
+    mod.apps.jetbrains = f"app.name: {appName}-EAP"
 mod.apps.jetbrains = """
 os: mac
 and app.bundle: com.google.android.studio
 """
 # windows
-mod.apps.jetbrains = "app.exe: idea64.exe"
-mod.apps.jetbrains = "app.exe: PyCharm64.exe"
-mod.apps.jetbrains = "app.exe: pycharm64.exe"
-mod.apps.jetbrains = "app.exe: webstorm64.exe"
+mod.apps.jetbrains = r"app.exe: /^idea64\.exe$/i"
+mod.apps.jetbrains = r"app.exe: /^PyCharm64\.exe$/i"
+mod.apps.jetbrains = r"app.exe: /^webstorm64\.exe$/i"
 mod.apps.jetbrains = """
 os: mac
 and app.bundle: com.jetbrains.pycharm
 """
 mod.apps.jetbrains = """
+os: mac
+and app.bundle: com.jetbrains.rider
+"""
+mod.apps.jetbrains = """
+os: mac
+and app.bundle: com.jetbrains.goland
+"""
+mod.apps.jetbrains = """
+os: mac
+and app.bundle: com.jetbrains.intellij.ce
+"""
+mod.apps.jetbrains = r"""
 os: windows
 and app.name: JetBrains Rider
 os: windows
-and app.exe: rider64.exe
+and app.exe: /^rider64\.exe$/i
+"""
+
+# Local plugin development:
+mod.apps.jetbrains = """
+os: mac
+and app.bundle: com.jetbrains.jbr.java
 """
 
 
@@ -145,7 +160,15 @@ and app.exe: rider64.exe
 class Actions:
     def idea(commands: str):
         """Send a command to Jetbrains product"""
-        idea_commands(commands)
+        command_list = commands.split(",")
+        try:
+            for cmd in command_list:
+                if cmd:
+                    send_idea_command(cmd.strip())
+                    actions.sleep(0.1)
+        except Exception as e:
+            app.notify(str(e))
+            raise
 
     def idea_grab(times: int):
         """Copies specified number of words to the left"""
@@ -155,12 +178,10 @@ class Actions:
             for _ in range(times):
                 send_idea_command("action EditorSelectWord")
             send_idea_command("action EditorCopy")
-            send_idea_command("goto {} {}".format(original_line, original_column))
+            send_idea_command(f"goto {original_line} {original_column}")
             send_idea_command("action EditorPaste")
         finally:
             clip.set(old_clip)
-            global extendCommands
-            extendCommands = []
 
 
 ctx.matches = r"""
@@ -211,8 +232,10 @@ class EditActions:
     def find_previous():
         actions.user.idea("action FindPrevious")
 
-    def find(text: str = None):
+    def find(text=None):
         actions.user.idea("action Find")
+        if text:
+            actions.insert(text)
 
     def line_clone():
         actions.user.idea("action EditorDuplicate")
@@ -229,7 +252,7 @@ class EditActions:
     def indent_less():
         actions.user.idea("action EditorUnindentSelection")
 
-    def select_line(n: int = None):
+    def select_line(n=None):
         actions.user.idea("action EditorSelectLine")
 
     def select_word():
@@ -252,11 +275,12 @@ class EditActions:
 
     def extend_word_left():
         actions.user.idea("action EditorPreviousWordWithSelection")
+
     def extend_word_right():
         actions.user.idea("action EditorNextWordWithSelection")
 
     def jump_line(n: int):
-        actions.user.idea("goto {} 0".format(n))
+        actions.user.idea(f"goto {n} 0")
         # move the cursor to the first nonwhite space character of the line
         actions.user.idea("action EditorLineEnd")
         actions.user.idea("action EditorLineStart")
@@ -280,21 +304,24 @@ class WinActions:
 
 @ctx.action_class("user")
 class UserActions:
+    def command_server_directory() -> str:
+        return "jetbrains-command-server"
+
     def tab_jump(number: int):
         # depends on plugin GoToTabs
         if number < 10:
-            actions.user.idea("action GoToTab{}".format(number))
+            actions.user.idea(f"action GoToTab{number}")
 
     def extend_until_line(line: int):
-        actions.user.idea("extend {}".format(line))
+        actions.user.idea(f"extend {line}")
 
     def select_range(line_start: int, line_end: int):
         # if it's a single line, select the entire thing including the ending new-line5
         if line_start == line_end:
-            actions.user.idea("goto {} 0".format(line_start))
-            actions.user.idea("action EditorSelectLine"),
+            actions.user.idea(f"goto {line_start} 0")
+            actions.user.idea("action EditorSelectLine")
         else:
-            actions.user.idea("range {} {}".format(line_start, line_end))
+            actions.user.idea(f"range {line_start} {line_end}")
 
     def extend_camel_left():
         actions.user.idea("action EditorPreviousWordInDifferentHumpsModeWithSelection")
@@ -308,25 +335,37 @@ class UserActions:
     def camel_right():
         actions.user.idea("action EditorNextWordInDifferentHumpsMode")
 
+    def command_search(command: str = ""):
+        actions.user.idea("action GotoAction")
+        if command != "":
+            actions.insert(command)
+
     def line_clone(line: int):
-        actions.user.idea("clone {}".format(line))
+        actions.user.idea(f"clone {line}")
 
     # multi-cursor tag functions
     def multi_cursor_enable():
         actions.skip()
+
     def multi_cursor_disable():
         actions.key("escape")
+
     def multi_cursor_add_above():
         actions.user.idea("action EditorCloneCaretAbove")
+
     def multi_cursor_add_below():
         actions.user.idea("action EditorCloneCaretBelow")
+
     def multi_cursor_select_fewer_occurrences():
         actions.user.idea("action UnselectPreviousOccurrence")
+
     def multi_cursor_select_more_occurrences():
         actions.user.idea("action SelectNextOccurrence")
+
     # def multi_cursor_skip_occurrence():
     def multi_cursor_select_all_occurrences():
         actions.user.idea("action SelectAllOccurrences")
+
     def multi_cursor_add_to_line_ends():
         actions.user.idea("action EditorAddCaretPerSelectedLine")
 
@@ -338,20 +377,28 @@ class UserActions:
     # def split_window_up():
     def split_window_vertically():
         actions.user.idea("action SplitVertically")
+
     def split_window_horizontally():
         actions.user.idea("action SplitHorizontally")
+
     def split_flip():
         actions.user.idea("action ChangeSplitOrientation")
+
     def split_maximize():
         actions.key("ctrl-shift-f12")
+
     def split_reset():
         actions.key("shift-f12")
+
     # def split_window():
     def split_clear():
         actions.user.idea("action Unsplit")
+
     def split_clear_all():
         actions.user.idea("action UnsplitAll")
+
     def split_next():
         actions.user.idea("action NextSplitter")
+
     # def split_last():
     # def split_number(index: int):

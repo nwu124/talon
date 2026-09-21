@@ -1,19 +1,18 @@
-from talon import Context, Module
+from talon import Module
 
-ctx = Context()
 mod = Module()
-
-mod.tag("code_operators_bitwise", desc="Tag for enabling bitwise operator commands")
 
 
 @mod.action_class
 class Actions:
-
     def code_operator_bitwise_and():
         """code_operator_bitwise_and"""
 
     def code_operator_bitwise_or():
         """code_operator_bitwise_or"""
+
+    def code_operator_bitwise_not():
+        """code_operator_bitwise_not"""
 
     def code_operator_bitwise_exclusive_or():
         """code_operator_bitwise_exclusive_or"""

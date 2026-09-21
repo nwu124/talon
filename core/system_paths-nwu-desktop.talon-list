@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: nwu-desktop
+-
+user: C:\Users\wunat
+desktop: C:\Users\wunat\Desktop
+desk: C:\Users\wunat\Desktop
+documents: C:\Users\wunat\Documents
+docks: C:\Users\wunat\Documents
+downloads: C:\Users\wunat\Downloads
+music: C:\Users\wunat\Music
+pictures: C:\Users\wunat\Pictures
+videos: C:\Users\wunat\Videos
+talon home: C:\Users\wunat\AppData\Roaming\talon
+talon recordings: C:\Users\wunat\AppData\Roaming\talon\recordings
+talon user: C:\Users\wunat\AppData\Roaming\talon\user
+profile: C:\Users\wunat

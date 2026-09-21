@@ -1,18 +1,17 @@
-from talon import Module, Context, actions
+from talon import Context, Module, actions
 
 # --- App definition ---
 mod = Module()
-mod.apps.okular = """
+mod.apps.okular = r"""
 os: windows
 and app.name: okular.exe
 os: windows
-and app.exe: okular.exe
+and app.exe: /^okular\.exe$/i
 """
 mod.apps.okular = """
 os: linux
 and app.name: okular
 """
-# TODO: mac context and implementation
 
 # Context matching
 ctx = Context()
@@ -32,11 +31,18 @@ class UserActions:
         page = actions.edit.selected_text()
         actions.key("escape")
         return int(page)
-    def page_next(): actions.key("l")
-    def page_previous(): actions.key("h")
+
+    def page_next():
+        actions.key("l")
+
+    def page_previous():
+        actions.key("h")
+
     def page_jump(number: int):
         actions.key("ctrl-g")
         actions.sleep("100ms")
         actions.insert(str(number))
         actions.key("enter")
-    def page_final(): actions.key("ctrl-end")
+
+    def page_final():
+        actions.key("ctrl-end")

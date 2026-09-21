@@ -1,9 +1,48 @@
-minimum_pre_commit_version: "2.9.0"
+minimum_pre_commit_version: "4.5.0"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.2.0
+    rev: v6.0.0
     hooks:
-      - id: mixed-line-ending
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-illegal-windows-names
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: fix-byte-order-marker
+      # NB. To avoid sometimes needing multiple runs, we need:
+      # - trailing-whitespace BEFORE end-of-file-fixer,
+      #   otherwise trailing newline followed by whitespace, "\n ",
+      #   will need multiple runs.
+      # - end-of-file-fixer   BEFORE mixed-line-ending,
+      #   otherwise a file with CRLF line endings but missing a trailing
+      #   newline will need multiple runs.
       - id: trailing-whitespace
       - id: end-of-file-fixer
-      - id: check-merge-conflict
+      - id: mixed-line-ending
+
+  - repo: https://github.com/oxc-project/mirrors-oxfmt
+    rev: "v0.67.0"
+    hooks:
+      - id: oxfmt
+        types_or: [markdown, yaml, toml, json]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.7
+    hooks:
+      - id: ruff-check
+        types_or: [python, pyi, jupyter, pyproject]
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/cursorless-dev/talon-tools
+    rev: v0.12.0
+    hooks:
+      - id: talon-fmt
+      - id: snippet-fmt

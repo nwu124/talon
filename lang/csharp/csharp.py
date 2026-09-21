@@ -1,160 +1,86 @@
-from talon import Context, Module, actions, settings
+from talon import Context, actions, settings
+
+from ...core.described_functions import create_described_insert_between
+from ..tags.operators import Operators
 
 ctx = Context()
-mod = Module()
 ctx.matches = r"""
-tag: user.csharp
+code.language: csharp
 """
-ctx.lists["user.code_common_function"] = {
-    # Used as "funk <phrase>"
-    "integer": "int.TryParse",
-    "print": "Console.WriteLine",
-    "string": ".ToString",
-}
 
-# Types
-csharp_types = {
-    "boolean": "bool",
-    "byte": "byte",
-    #"sbyte": "sbyte",
-    "char": "char",
-    "decimal": "decimal",
-    "double": "double",
-    "float": "float",
-    "int": "int",
-    #"uint": "uint",
-    #"nint": "nint",
-    #"nuint": "nuint",
-    "long": "long",
-    #"ulong": "ulong",
-    "short": "short",
-    #"ushort": "ushort",
+operators = Operators(
+    # code_operators_array
+    SUBSCRIPT=create_described_insert_between("[", "]"),
+    # code_operators_assignment
+    ASSIGNMENT=" = ",
+    ASSIGNMENT_ADDITION=" += ",
+    ASSIGNMENT_SUBTRACTION=" -= ",
+    ASSIGNMENT_DIVISION=" /= ",
+    ASSIGNMENT_MULTIPLICATION=" *= ",
+    ASSIGNMENT_MODULO=" %= ",
+    ASSIGNMENT_BITWISE_AND=" &= ",
+    ASSIGNMENT_BITWISE_EXCLUSIVE_OR=" ^= ",
+    ASSIGNMENT_BITWISE_LEFT_SHIFT=" <<= ",
+    ASSIGNMENT_BITWISE_OR=" |= ",
+    ASSIGNMENT_BITWISE_RIGHT_SHIFT=" >>= ",
+    ASSIGNMENT_INCREMENT="++",
+    # code_operators_bitwise
+    BITWISE_NOT="~",
+    BITWISE_AND=" & ",
+    BITWISE_EXCLUSIVE_OR=" ^ ",
+    BITWISE_LEFT_SHIFT=" << ",
+    BITWISE_OR=" | ",
+    BITWISE_RIGHT_SHIFT=" >> ",
+    # code_operators_lambda
+    LAMBDA="=>",
+    # code_operators_pointer
+    MATH_ADD=" + ",
+    MATH_SUBTRACT=" - ",
+    MATH_MULTIPLY=" * ",
+    MATH_DIVIDE=" / ",
+    MATH_MODULO=" % ",
+    MATH_EQUAL=" == ",
+    MATH_NOT_EQUAL=" != ",
+    MATH_OR=" || ",
+    MATH_AND=" && ",
+    MATH_NOT="!",
+    MATH_GREATER_THAN_OR_EQUAL=" >= ",
+    MATH_GREATER_THAN=" > ",
+    MATH_LESS_THAN_OR_EQUAL=" <= ",
+    MATH_LESS_THAN=" < ",
+    # code_operators_pointer
+    POINTER_ADDRESS_OF="&",
+    POINTER_INDIRECTION="*",
+    POINTER_STRUCTURE_DEREFERENCE="->",
+)
 
-    "void": "void",
-    "var": "var",
-
-    "object": "object",
-    "string": "string",
-    "dynamic": "dynamic",
-}
-
-# Structures
-csharp_structures = {
-    "stack": "Stack",
-    "cu": "Queue",    
-    "cue": "Queue",    
-    "queue": "Queue",    
-    "list": "List",
-
-    "priority cu": "PriorityQueue",
-    "priority cue": "PriorityQueue",
-    "priority queue": "PriorityQueue",
-    "dictionary": "Dictionary",
-    "sorted dictionary": "SortedDictionary",
-    "hash set": "HashSet",
-    "sorted set": "SortedSet",
-    "link to list": "LinkedList",
-    "linked list": "LinkedList",
-    "ray list": "ArrayList",
-    "array list": "ArrayList",
-
-    # Commonly used classes
-    "string builder": "StringBuilder",
-    "ray": "Array",
-    "array": "Array",
-}
-
-terms = csharp_types.copy()
-terms.update(csharp_structures)
-
-ctx.lists["user.code_type"] = terms
-
-mod.list("csharp_structures", desc="C# Generic Data Structures")
-ctx.lists["self.csharp_structures"] = csharp_structures
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_indirection():           actions.auto_insert('*')
-    def code_operator_address_of():            actions.auto_insert('&')
-    def code_operator_structure_dereference(): actions.auto_insert('->')
-    def code_operator_lambda():                actions.auto_insert('=>')
-    def code_operator_subscript():
-        actions.user.insert_between('[', ']')
-    def code_operator_assignment():                      actions.auto_insert(' = ')
-    def code_operator_subtraction():                     actions.auto_insert(' - ')
-    def code_operator_subtraction_assignment():          actions.auto_insert(' -= ')
-    def code_operator_addition():                        actions.auto_insert(' + ')
-    def code_operator_addition_assignment():             actions.auto_insert(' += ')
-    def code_operator_multiplication():                  actions.auto_insert(' * ')
-    def code_operator_multiplication_assignment():       actions.auto_insert(' *= ')
-    #action(user.code_operator_exponent): " ** "
-    def code_operator_division():                        actions.auto_insert(' / ')
-    def code_operator_division_assignment():             actions.auto_insert(' /= ')
-    def code_operator_modulo():                          actions.auto_insert(' % ')
-    def code_operator_modulo_assignment():               actions.auto_insert(' %= ')
-    def code_operator_equal():                           actions.auto_insert(' == ')
-    def code_operator_not_equal():                       actions.auto_insert(' != ')
-    def code_operator_greater_than():                    actions.auto_insert(' > ')
-    def code_operator_greater_than_or_equal_to():        actions.auto_insert(' >= ')
-    def code_operator_less_than():                       actions.auto_insert(' < ')
-    def code_operator_less_than_or_equal_to():           actions.auto_insert(' <= ')
-    def code_operator_and():                             actions.auto_insert(' && ')
-    def code_operator_or():                              actions.auto_insert(' || ')
-    def code_operator_bitwise_and():                     actions.auto_insert(' & ')
-    def code_operator_bitwise_and_assignment():          actions.auto_insert(' &= ')
-    def code_operator_bitwise_or():                      actions.auto_insert(' | ')
-    def code_operator_bitwise_or_assignment():           actions.auto_insert(' |= ')
-    def code_operator_bitwise_exclusive_or():            actions.auto_insert(' ^ ')
-    def code_operator_bitwise_exclusive_or_assignment(): actions.auto_insert(' ^= ')
-    def code_operator_bitwise_left_shift():              actions.auto_insert(' << ')
-    def code_operator_bitwise_left_shift_assignment():   actions.auto_insert(' <<= ')
-    def code_operator_bitwise_right_shift():             actions.auto_insert(' >> ')
-    def code_operator_bitwise_right_shift_assignment():  actions.auto_insert(' >>= ')
-    def code_block():
-        actions.insert('{}')
-        actions.key('left enter enter up tab')
+    def code_get_operators() -> Operators:
+        return operators
 
     def code_self():
-        actions.auto_insert('this')
+        actions.insert("this")
 
     def code_operator_object_accessor():
-        actions.auto_insert(".")
+        actions.insert(".")
 
-    def code_insert_null():        actions.auto_insert('null')
-    def code_insert_is_null():     actions.auto_insert(' == null ')
-    def code_insert_is_not_null(): actions.auto_insert(' != null')
-    def code_state_if():
-        actions.user.insert_between('if (', ')')
-    def code_state_else_if():
-        actions.user.insert_between('else if (', ')')
-    def code_state_else():
-        actions.insert('else {\n')
-    def code_state_switch():
-        actions.user.insert_between('switch (', ')')
-    def code_state_case():
-        actions.insert('case \nbreak;')
-        actions.edit.up()
-    def code_state_for(): 
-        actions.user.insert_between('for (', ')')
-    def code_state_for_each():
-        actions.insert('foreach () ')
-        actions.key('left')
-        actions.edit.word_left()
-        actions.key('space')
-        actions.edit.left()
-    def code_state_go_to(): actions.auto_insert('go to ')
-    def code_state_while():
-        actions.user.insert_between('while (', ')')
-    def code_state_return():   actions.auto_insert('return ')
-    def code_break():          actions.auto_insert('break;')
-    def code_next():           actions.auto_insert('continue;')
-    def code_insert_true():           actions.auto_insert('true')
-    def code_insert_false():          actions.auto_insert('false')
-    def code_define_class():     actions.auto_insert('class ')
-    def code_import():         actions.auto_insert('using ')
-    def code_comment_line_prefix():        actions.auto_insert('// ')
-    def code_comment_block_prefix(): actions.auto_insert('/* ')
-    def code_comment_block_suffix(): actions.auto_insert('*/')
+    def code_insert_null():
+        actions.insert("null")
+
+    def code_insert_is_null():
+        actions.insert(" == null ")
+
+    def code_insert_is_not_null():
+        actions.insert(" != null")
+
+    def code_insert_true():
+        actions.insert("true")
+
+    def code_insert_false():
+        actions.insert("false")
+
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"
         actions.user.paste(text)
