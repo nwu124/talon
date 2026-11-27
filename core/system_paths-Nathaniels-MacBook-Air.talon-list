@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: Nathaniels-MacBook-Air
+-
+user: /Users/wunat
+desktop: /Users/wunat/Desktop
+desk: /Users/wunat/Desktop
+documents: /Users/wunat/Documents
+docks: /Users/wunat/Documents
+downloads: /Users/wunat/Downloads
+music: /Users/wunat/Music
+pictures: /Users/wunat/Pictures
+videos: /Users/wunat/Videos
+talon home: /Users/wunat/.talon
+talon recordings: /Users/wunat/.talon/recordings
+talon user: /Users/wunat/.talon/user
+home: /Users/wunat
