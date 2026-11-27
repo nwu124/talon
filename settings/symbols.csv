@@ -10,7 +10,7 @@ Symbol,Mode (command/dictation/both),Spoken Forms (separated with commas)
 ?,both,question mark
 ?,command,question
 !,both,exclamation mark,exclamation point
-!,command,bang
+!,command,banger
 *,both,asterisk
 *,command,star
 #,both,hash sign,number sign
@@ -30,21 +30,21 @@ Symbol,Mode (command/dictation/both),Spoken Forms (separated with commas)
 +,command,plus
 ~,command,tilde
 _,command,down score,underscore
-(,both,paren,L paren,left paren
-),both,R paren,right paren
-[,command,brack,L brack,bracket,L bracket,left bracket,square,L square,left square
-],command,R brack,R bracket,right bracket,R square,right square
+(,both,paren,L paren,left paren,open paren
+),both,R paren,right paren,close paren
+[,command,brack,L brack,bracket,L bracket,left bracket,square,L square,left square,open square
+],command,R brack,R bracket,right bracket,R square,right square,close square
 /,both,forward slash
 /,command,slash
 \,command,backslash
-{,command,brace,L brace,left brace,curly bracket,left curly bracket
-},command,R brace,right brace,R curly bracket,right curly bracket
-<,command,angle,L Angle,left angle,less than
->,command,rangle,R angle,right angle,greater than
+{,command,brace,L brace,left brace,curly bracket,left curly bracket,open brace
+},command,R brace,right brace,R curly bracket,right curly bracket,close brace
+<,command,angle,L Angle,left angle,less than,open angle
+>,command,rangle,R angle,right angle,greater than,close angle
 ^,command,caret
 |,command,pipe
-',command,quote,apostrophe
-"""",command,dub quote,double quote
+',command,quote,apostrophe,single
+"""",command,dub quote,double quote,double
 $,both,dollar sign
 $,command,dollar
 £,both,pound sign

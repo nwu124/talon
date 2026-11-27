@@ -13,7 +13,7 @@ zoom out: edit.zoom_out()
 zoom reset: edit.zoom_reset()
 
 # Searching
-find it: edit.find()
+search: edit.find()
 next one: edit.find_next()
 
 # Navigation
@@ -29,12 +29,12 @@ go <user.navigation_step>+: user.perform_navigation_steps(navigation_step_list)
 go line start | head: edit.line_start()
 go line end | tail: edit.line_end()
 
-go way left:
+go left:
     edit.line_start()
     edit.line_start()
-go way right: edit.line_end()
-go way up: edit.file_start()
-go way down: edit.file_end()
+go right: edit.line_end()
+go up: edit.file_start()
+go down: edit.file_end()
 
 go top: edit.file_start()
 go bottom: edit.file_end()
@@ -42,15 +42,71 @@ go bottom: edit.file_end()
 go page up: edit.page_up()
 go page down: edit.page_down()
 
+lefter: edit.word_left()
+writer: edit.word_right()
+# selecting
+select line:
+    edit.line_start()
+    edit.extend_line_end()
+select all:
+    edit.select_all()
+select left:
+    edit.extend_left()
+select right:
+    edit.extend_right()
+select up:
+    edit.extend_line_up()
+select down:
+    edit.extend_line_down()
+select word left:
+    edit.extend_word_left()
+select word right:
+    edit.extend_word_right()
+select way left:
+    edit.extend_line_start()
+select way right:
+    edit.extend_line_end()
+select way up:
+    edit.extend_file_start()
+select way down:
+    edit.extend_file_end()
+
 # Indentation
 indent [more]: edit.indent_more()
 indent less | out dent: edit.indent_less()
 
 # Copy
 copy that: edit.copy()
+copy all:
+    edit.select_all()
+    edit.copy()
+copy word:
+    edit.select_word()
+    edit.copy()
+copy word left:
+    edit.extend_word_left()
+    edit.copy()
+copy word right:
+    edit.extend_word_right()
+    edit.copy()
+copy line:
+    edit.select_line()
+    edit.copy()
 
 # Cut
 cut that: edit.cut()
+cut word:
+    edit.select_word()
+    edit.cut()
+cut word left:
+    edit.extend_word_left()
+    edit.cut()
+cut word right:
+    edit.extend_word_right()
+    edit.cut()
+cut line:
+    edit.select_line()
+    edit.cut()
 
 # Paste
 (pace | paste) (that | it): edit.paste()
@@ -58,6 +114,38 @@ cut that: edit.cut()
     edit.paste()
     key(enter)
 paste match: edit.paste_match_style()
+
+# Deleting
+clear line:
+    edit.delete_line()
+clear up:
+    edit.extend_line_up()
+    edit.delete()
+clear down:
+    edit.extend_line_down()
+    edit.delete()
+clear word:
+	key(ctrl-left)
+	edit.extend_word_right()
+	edit.delete()
+clear left:
+    edit.extend_word_left()
+    edit.delete()
+clear right:
+    edit.extend_word_right()
+    edit.delete()
+clear line left:
+    edit.extend_line_start()
+    edit.delete()
+clear line right:
+    edit.extend_line_end()
+    edit.delete()
+clear way up:
+    edit.extend_file_start()
+    edit.delete()
+clear way down:
+    edit.extend_file_end()
+    edit.delete()
 
 # Duplication
 clone that: edit.selection_clone()

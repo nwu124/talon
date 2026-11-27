@@ -40,7 +40,7 @@ settings():
     # 0 = off
     # 1 = on with eyetracker but not zoom mouse mode
     # 2 = on but not with zoom mouse mode
-    user.mouse_enable_pop_click = 1
+    user.mouse_enable_pop_click = 2
 
     # If `true`, use a hissing noise to scroll continuously
     user.mouse_enable_hiss_scroll = false
@@ -68,7 +68,7 @@ settings():
     user.mouse_click_hold = 0
 
     # If `true`, start mouse grid numbering on the bottom left (vs. top left)
-    user.grids_put_one_bottom_left = true
+    user.grids_put_one_bottom_left = false
 
     # If `true`, show a zoomed in version of the mouse grid when it becomes sufficiently small
     user.grid_show_zoomed = true

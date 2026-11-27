@@ -264,6 +264,11 @@ formatter_list = [
     CodeFormatter("ALL_SLASHES", "/", lambda text: f"/{text.lower()}", lower),
     CodeFormatter("DOUBLE_UNDERSCORE", "__", lower, lower),
     CodeFormatter("DOUBLE_COLON_SEPARATED", "::", lower, lower),
+
+    CustomFormatter("FIRST_THREE", lambda text: text[0:3]),
+    CustomFormatter("FIRST_FOUR", lambda text: text[0:4]),
+    CustomFormatter("FIRST_FIVE", lambda text: text[0:5]),
+    CustomFormatter("LEADING_SPACE", lambda text: f" {text}"),
 ]
 
 formatters_dict = {f.id: f for f in formatter_list}

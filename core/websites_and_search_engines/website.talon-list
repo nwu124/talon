@@ -1,19 +1,23 @@
 list: user.website
 -
-
-talon home page: http://talonvoice.com
-talon slack: http://talonvoice.slack.com/messages/help
-talon wiki: https://talon.wiki/
-talon practice: https://chaosparrot.github.io/talon_practice/
-talon repository search: https://search.talonvoice.com/search/
+Netflix: https://www.netflix.com/browse/
+twitch: https://www.twitch.tv/
+viki: https://www.viki.com/watchlist
+youtube: https://www.youtube.com/feed/subscriptions/
+messenger: https://www.facebook.com/messages/
+drive: https://drive.google.com/drive/
+mail: https://mail.google.com/mail/
+calendar: https://calendar.google.com/calendar/
+prime: https://www.amazon.com/gp/video/storefront/ref=atv_hm_hom_c_9zZ8D2_1_0
+dramatic: https://docs.google.com/spreadsheets/d/1zX-UDp-4clJEoSp-uOgBGui9BtnE1EDxDqe7hKRWTE0
+reddit: https://www.reddit.com/
+instagram: https://www.instagram.com/
+Disney: https://www.disneyplus.com/browse/watchlist
+Hulu: https://www.hulu.com/my-stuff
 amazon: https://www.amazon.com/
-dropbox: https://dropbox.com/
-google: https://www.google.com/
-google calendar: https://calendar.google.com
-google maps: https://maps.google.com/
-google scholar: https://scholar.google.com/
-gmail: https://mail.google.com/
-github: https://github.com/
-gist: https://gist.github.com/
-wikipedia: https://en.wikipedia.org/
-youtube: https://www.youtube.com/
+claude: https://claude.ai/
+scratch: https://docs.google.com/document/d/15w8rTUZW3WzrwZcztW7UbsRGZikcNyxsnu8Gy3gh0gM
+scratch sheet: https://docs.google.com/spreadsheets/d/1ADozxIb8Cp9SfdW-8DwGZp_cq2qgK6mNURw7NzjE7uE
+chess: https://www.chess.com/puzzles/rated/
+liches: https://lichess.org/editor?fen=rnbqkbnr%2Fpppppppp%2F8%2F8%2F8%2F8%2FPPPPPPPP%2FRNBQKBNR+w+KQkq+-+0+1&variant=standard&color=white
+home: http://homeassistant.local:8123/home/overview

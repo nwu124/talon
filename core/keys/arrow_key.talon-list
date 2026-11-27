@@ -5,3 +5,7 @@ down: down
 left: left
 right: right
 up: up
+pop: left
+push: right
+sky: up
+ground: down

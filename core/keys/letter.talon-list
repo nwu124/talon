@@ -4,28 +4,48 @@ list: user.letter
 # for common alternative spoken forms for letters, visit
 # https://talon.wiki/Resource%20Hub/Speech%20Recognition/improving_recognition_accuracy#collected-alternatives-to-the-default-alphabet
 air: a
-bat: b
-cap: c
+bar: b
+card: c
 drum: d
-each: e
+ever: e
 fine: f
 gust: g
-harp: h
+ham: h
 sit: i
-jury: j
+jane: j
 crunch: k
 look: l
 made: m
 near: n
-odd: o
-pit: p
-quench: q
+orc: o
+pink: p
+quit: q
 red: r
-sun: s
+shake: s
 trap: t
-urge: u
+unit: u
 vest: v
 whale: w
 plex: x
 yank: y
-zip: z
+zap: z
+
+#die
+#bat
+#cap
+#harp
+#hat
+#sit
+#jury
+#wet
+#zip
+#pit
+#sun
+#spa 
+#spin
+#split
+#quench
+#urge
+#odd
+#zap
+#each
